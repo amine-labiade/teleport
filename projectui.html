@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>UI look</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  </head>
+  <body>
+
+    <style>
+        html{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "Lato", sans-serif;
+        }
+
+        /* .wrapper {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        .container{
+            min-height: 100vh;
+            min-width: 100vh;
+            margin: 0;
+            transition: .2s;
+        } */
+        /* .container {
+            margin: 270px;
+            transition: .2s;
+        } */
+
+        .wrapper {
+            position: fixed;
+            height: 100%;
+        }
+        .side-nav {
+            width: auto;
+            min-width: 270px; 
+            /* min-height: 100vh; */
+            height: 100%;
+            position:  absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x:hidden ;
+            padding-top: 60px;
+            transition: 0.2s;
+        }
+        .side-nav a , .side-nav section{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-nav a:hover {
+            color: #f1f1f1;
+        }
+
+        .side-nav .close-btn {
+            position: absolute;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            background-color: inherit;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            display: none;
+        }
+
+        #main {
+            padding: 20px;
+            width: 100%;
+            margin-left: 270px;
+            transition: all .2s;
+            filter:blur(0);
+        }
+
+
+
+
+        .bottom-nav{
+            position: absolute;
+            display: flex;
+            justify-content:space-evenly;
+            align-content:stretch;
+            background-color: #0080ffd7;
+            width: 100%;
+            bottom: 0;
+            margin: 0;
+            /* max-width: inherit;
+            min-width: inherit; */
+            overflow: auto;
+            /* text-align: center; */
+        }
+        .bottom-nav a{
+            float: left;
+            width: 100%;
+            text-align: center;
+            padding: 12px 0;
+            transition: all 0.3 ease;
+            color: azure;
+            font-size: 25px;
+            text-decoration: none;
+            border: none;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+            outline: 1px solid;
+            outline-color: #6eaec280;
+            outline-offset: 0px;
+            text-shadow: none;
+            transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .sidebar-toggle{
+            display: none;
+            transition: .1s;
+        }
+
+        .bottom-nav span{
+            color: azure;
+            font-size: 15px;
+            display: block;
+        }
+
+        .bottom-nav i{
+            color: azure;
+            font-size: 25px;
+            display: block;
+        }
+
+        .bottom-nav a:hover{
+            background-color: #4355aa;
+            border: 1px solid;
+            border-color:#6eaec280;
+            box-shadow: inset 0 0 20px hsla(241, 49%, 55%, 0.5), 0 0 20px rgba(58, 174, 219, 0.2);
+            outline-color: rgba(199, 42, 42, 0);
+            outline-offset: 15px;
+            text-shadow: 1px 1px 2px #427388; 
+        }
+        a.active {
+            background-color:#af684c ;
+        }
+
+
+        @media screen and (max-height:450px){
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+
+        @media screen and (max-width: 992px){
+            .side-nav{
+                width: 0;
+                min-width: 0;
+                min-height: 0;
+            }
+
+            #main {
+                margin: 0;
+            }
+            /* .container {
+                min-height: 100vh;
+                min-width: 100vh;
+                margin: 0;
+            } */
+            .bottom-nav{
+                margin: 0;
+            }
+            .sidebar-toggle{
+                display: inline;
+            }
+        }
+    </style>
+
+    <div class="wrapper">
+        <div class="side-nav" id="sideNav">
+            <span class="close-btn" onclick="closeNav()">&times;</span>
+            <div>
+                <section>
+                    <h3>Services</h3>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                </section>
+                <section>
+                    <h3>Account</h3>
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                </section>
+            </div>
+    
+            <div class="list-group list-group-flush">
+              <a href="#" class="list-group-item list-group-item-action bg-dark">Dashboard</a>
+              <a href="#" class="list-group-item list-group-item-action bg-dark">Shortcuts</a>
+              <a href="#" class="list-group-item list-group-item-action bg-dark">Overview</a>
+              <a href="#" class="list-group-item list-group-item-action bg-dark">Events</a>
+              <a href="#" class="list-group-item list-group-item-action bg-dark">Profile</a>
+              <a href="#" class="list-group-item list-group-item-action bg-dark">Status</a>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div id="main">
+                <span class="sidebar-toggle" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis doloremque, natus cum nulla quos, aperiam id non enim, quo incidunt alias. Tempore mollitia incidunt asperiores dignissimos accusamus ducimus expedita excepturi!</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio dolorum tenetur corrupti eum sunt ut excepturi tempora magnam, quisquam doloribus, error veritatis possimus quidem saepe. Error totam facilis quod harum!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aliquam veritatis, esse necessitatibus neque officia, error iste ipsum non recusandae praesentium odit fugiat atque, eveniet dignissimos! Earum dolore voluptates iure.</p>
+            </div>
+            <div class="bottom-nav" id="bottomNav">
+                <a href="#" class="active"><i class="fas fa-home"></i><span>main</span></a>
+                <a href="#"><i class="fas fa-bell"></i><span>notifications</span></a>
+                <a href="#"><i class="fas fa-question"></i><span>help</span></a>
+            </div>
+        </div>
+    </div>
+
+
+   
+    
+  
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js" integrity="sha512-53CQcu9ciJDlqhK7UD8dZZ+TF2PFGZrOngEYM/8qucuQba+a+BXOIRsp9PoMNJI3ZeLMVNIxIfZLbG/CdHI5PA==" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <script>
+        var sideBarOpen = false;
+        function openNav(){
+            document.getElementById("sideNav").style.width = "250px";
+            // document.getElementById("main").style.marginLeft = "250px";
+            // document.getElementById("main").style.opacity = "0.1";
+            document.getElementById("main").style.filter = "blur(2px)";
+            sideBarOpen = true;
+        }
+        function closeNav(){
+            document.getElementById("sideNav").style.width = "0";
+            // document.getElementById("main").style.marginLeft = "0";
+            // document.getElementById("main").style.opacity = "1";
+            document.getElementById("main").style.filter = "blur(0)";
+            sideBarOpen = false;
+        }
+        
+
+        $( document ).click(function( event ) {
+        var target = $( event.target );
+        console.log(target);
+        
+        if(!target.is("#sideNav") && !$("#sideNav").has(event.target).length && !target.is(".sidebar-toggle") && sideBarOpen){
+            closeNav();
+            }else if(target.is(".sidebar-toggle")){
+                openNav();
+            } 
+        });
+
+        // $(window).resize(function(){
+        //     if($(window).width() > 992){
+        //         $('.bottom-nav').width($(window).width() - $('.side-nav').width())
+        //     }
+        // })
+
+        // $("body").click(function (e) { 
+            
+        // });
+    </script>
+  </body>
+</html>

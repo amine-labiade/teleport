@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>UI look</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">   
+  </head>
+  <body>
+
+    <style>
+        html,body { 
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            font-family: "Lato", sans-serif;
+        }
+        .wrapper {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        /* .sidenav {
+            background-color: black;
+            width: auto;
+            min-width: 270px;
+            padding-top: 60px;
+            z-index: 1;
+            transition: width .3s;
+        } */
+
+        .sidenav {
+            background-color: black;
+            width: auto;
+            min-width: 270px;
+            z-index: 1;
+            transition: .3s;
+        }
+
+        .sidenav div, .sidenav li, .sidenav li>a  {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #6d1414;
+            display: block;
+            transition: 0.3s;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+        .sidenav-toggle {
+            display: none;
+        }
+        
+        .bottom-nav {
+            height: 60px;
+            background-color: black;
+        
+        }
+        .bottom-nav a {
+            font-size: 25px;
+            text-decoration: none;
+            color: red;
+        }
+
+        .bottom-nav a{
+            float: left;
+            width: 100%;
+            text-align: center;
+            padding: 12px 0;
+            transition: all 0.3 ease;
+            color: azure;
+            font-size: 25px;
+            text-decoration: none;
+            border: none;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+            outline: 1px solid;
+            outline-color: #6eaec280;
+            outline-offset: 0px;
+            text-shadow: none;
+            transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .bottom-nav span{
+            color: azure;
+            font-size: 15px;
+            display: block;
+        }
+
+        .bottom-nav i{
+            color: azure;
+            font-size: 25px;
+            display: block;
+        }
+
+        .slot {
+            margin: none;
+            flex: 1;
+            -ms-flex: 1;
+        }
+
+        .bottom-nav a:hover{
+            background-color: #4355aa;
+            border: 1px solid;
+            border-color:#6eaec280;
+            box-shadow: inset 0 0 20px hsla(241, 49%, 55%, 0.5), 0 0 20px rgba(58, 174, 219, 0.2);
+            outline-color: rgba(199, 42, 42, 0);
+            outline-offset: 15px;
+            text-shadow: 1px 1px 2px #427388; 
+        }
+        a.active {
+            background-color:#af684c ;
+        }
+
+        @media screen and (max-height:450px){
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+
+        @media screen and (max-width: 992px) {
+            .sidenav{
+                width: 0;
+                min-width: 0;
+                height: 100%;
+                position:  absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                overflow-x:hidden ;
+                transition: .2s;
+                }
+            .bottom-nav{
+                position: absolute;
+                display: flex;
+                justify-content:space-evenly;
+                align-content:stretch;
+                background-color: black;
+                width: 100%;
+                bottom: 0;
+                margin: 0;
+                /* max-width: inherit;
+                min-width: inherit; */
+                overflow: auto;
+                /* text-align: center; */
+            }
+            .sidenav-toggle{
+                display: inline;
+            }
+        }
+
+  
+    </style>
+
+    <div class="wrapper d-flex">
+        <div class="sidenav" id="sideNav">
+            <div>
+                <li>
+                    <a href="#"><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-box"></i>Account</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-search"></i>Search</a>
+                </li>
+            </div>
+            <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action bg-danger">Dashboard</a>
+            <a href="#" class="list-group-item list-group-item-action bg-danger">Shortcuts</a>
+            <a href="#" class="list-group-item list-group-item-action bg-danger">Overview</a>
+            <a href="#" class="list-group-item list-group-item-action bg-danger">Events</a>
+            <a href="#" class="list-group-item list-group-item-action bg-danger">Profile</a>
+            <a href="#" class="list-group-item list-group-item-action bg-danger">Status</a>
+            </div>
+        </div>
+        <div class="main-content d-flex flex-column justify-content-start" id="main"> 
+            <div>
+                <span class="sidenav-toggle" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos sint nisi ut deleniti architecto voluptatum iusto? Voluptatibus, sed sint magni cupiditate aperiam natus, nam exercitationem autem placeat ipsum assumenda.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, nemo dicta animi harum exercitationem delectus debitis consequatur deleniti voluptatibus, enim rerum dolorum eum mollitia aut fuga cum similique magni unde?</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta in iure harum error quas at unde sunt laudantium veritatis? Libero blanditiis hic quaerat quod cumque dolor, facere nemo excepturi unde.</p>
+            </div>
+            <div class="bottom-nav d-flex justify-content-around align-items-center mt-auto" id="bottomNav">
+                <div class="slot">
+                    <a href="#" class="active"><i class="fas fa-globe"></i><span>globe</span></a>
+                </div>
+                <div class="slot">
+                    <a href="#"><i class="fas fa-home"></i><span>home</span></a>
+                </div>
+                <div class="slot"> 
+                    <a href="#"><i class="fas fa-tree"></i><span>tree</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js" integrity="sha512-53CQcu9ciJDlqhK7UD8dZZ+TF2PFGZrOngEYM/8qucuQba+a+BXOIRsp9PoMNJI3ZeLMVNIxIfZLbG/CdHI5PA==" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <script>
+        var sideBarOpen = false;
+        function openNav(){
+            document.getElementById("sideNav").style.width = "250px";
+            document.getElementById("main").style.filter = "blur(2px)";
+            sideBarOpen = true;
+        }
+        function closeNav(){
+            document.getElementById("sideNav").style.width = "0";
+            document.getElementById("main").style.filter = "blur(0)";
+            sideBarOpen = false;
+        }
+        
+
+        $( document ).click(function( event ) {
+        var target = $( event.target );
+        console.log(target);
+        
+        if(!target.is("#sideNav") && !$("#sideNav").has(event.target).length && !target.is(".sidenav-toggle") && sideBarOpen){
+            closeNav();
+            }else if(target.is(".sidenav-toggle")){
+                openNav();
+            } 
+        });
+    </script>
+  </body>
+</html>
